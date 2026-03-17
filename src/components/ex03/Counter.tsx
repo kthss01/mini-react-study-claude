@@ -5,7 +5,7 @@ type CounterProps = {
 	step?: number;
 };
 
-const Counter = ({ step = 1 }: CounterProps) => {
+const Counter = ({ step = 1 }: CounterProps): React.JSX.Element => {
 	const [count, setCount] = useState<number>(0);
 
 	return (
@@ -13,8 +13,8 @@ const Counter = ({ step = 1 }: CounterProps) => {
 			<div className="counter__controls">
 				<button
 					className="counter__button counter__button--minus"
-					onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-						setCount(count - step < 0 ? 0 : count - step)
+					onClick={(_e: React.MouseEvent<HTMLButtonElement>) =>
+						setCount((prev) => Math.max(0, prev - step))
 					}
 				>
 					[ - ]
@@ -23,22 +23,23 @@ const Counter = ({ step = 1 }: CounterProps) => {
 					className="counter__input"
 					type="number"
 					value={count}
-					onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-						setCount(e.target.valueAsNumber)
-					}
+					onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+						const cnt: number = Number(e.target.value);
+						if (!isNaN(cnt)) setCount(cnt);
+					}}
 				/>
 
 				<button
 					className="counter__button counter__button--plus"
-					onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
-						setCount(count + step)
+					onClick={(_e: React.MouseEvent<HTMLButtonElement>) =>
+						setCount((prev) => prev + step)
 					}
 				>
 					[ + ]
 				</button>
 				<button
 					className="counter__button counter__button--reset"
-					onClick={(e: React.MouseEvent<HTMLButtonElement>) =>
+					onClick={(_e: React.MouseEvent<HTMLButtonElement>) =>
 						setCount(0)
 					}
 				>
