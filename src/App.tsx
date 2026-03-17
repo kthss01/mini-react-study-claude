@@ -3,7 +3,7 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 import HelloWorld from "./components/ex01/HelloWorld";
-import { UserCard } from "./components/ex02/UserCard";
+import UserCard from "./components/ex02/UserCard";
 
 function App() {
 	return (

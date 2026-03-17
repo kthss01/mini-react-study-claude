@@ -6,7 +6,7 @@ type UserCardProps = {
 	bio?: string;
 };
 
-export const UserCard = ({
+const UserCard = ({
 	name,
 	email,
 	age,
@@ -15,13 +15,14 @@ export const UserCard = ({
 }: UserCardProps): React.JSX.Element => {
 	return (
 		<div>
-			[{name}] {isAdmin ? "(관리자)" : ""}
-			<br />
-			나이: {age ? `${age}세` : "정보 없음"}
-			<br />
-			이메일: {email}
-			<br />
-			{bio ? `자기소개: ${bio}` : ""}
+			<p>
+				[{name}]{isAdmin && " (관리자)"}
+			</p>
+			<p>나이: {age != undefined ? `${age}세` : "정보 없음"}</p>
+			<p>이메일: {email}</p>
+			{bio && <p>자기소개: {bio}</p>}
 		</div>
 	);
 };
+
+export default UserCard;
