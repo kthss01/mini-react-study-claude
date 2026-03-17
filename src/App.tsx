@@ -3,6 +3,7 @@ import viteLogo from "./assets/vite.svg";
 import heroImg from "./assets/hero.png";
 import "./App.css";
 import HelloWorld from "./components/ex01/HelloWorld";
+import UserCard from "./components/ex02/UserCard";
 
 function App() {
 	return (
@@ -30,10 +31,18 @@ function App() {
 						<code>HMR</code>
 					</p>
 				</div>
-				<HelloWorld
+				{/* <HelloWorld
 					name="홍길동"
 					message="오늘도 좋은 하루 되세요."
-				></HelloWorld>
+				></HelloWorld> */}
+				<UserCard
+					name="홍길동"
+					isAdmin={true}
+					age={28}
+					email="hong@example.com"
+					bio="안녕하세요!"
+				></UserCard>
+				<UserCard name="이순신" email="lee@example.com"></UserCard>
 			</section>
 
 			<div className="ticks"></div>
