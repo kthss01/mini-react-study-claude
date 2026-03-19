@@ -5,6 +5,7 @@ import "./App.css";
 import HelloWorld from "./components/ex01/HelloWorld";
 import UserCard from "./components/ex02/UserCard";
 import Counter from "./components/ex03/Counter";
+import Modal from "./components/ex04/Modal";
 
 function App() {
 	return (
@@ -47,7 +48,17 @@ function App() {
 				></UserCard>
 				<UserCard name="이순신" email="lee@example.com"></UserCard> */}
 				{/* ex03 */}
-				<Counter step={5} />
+				{/* <Counter step={5} /> */}
+				{/* ex04 */}
+				<Modal title="공지사항">
+					<p>안녕하세요!</p>
+					<button>확인</button>
+				</Modal>
+
+				<Modal title="카운터">
+					<p>테스트 화면입니다.</p>
+					<Counter step={5} />
+				</Modal>
 			</section>
 
 			<div className="ticks"></div>
