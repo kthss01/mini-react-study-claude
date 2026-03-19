@@ -18,7 +18,7 @@ const Modal = ({ title, children }: ModalProps): React.JSX.Element => {
 					className="modal-toggle-btn"
 					onClick={() => setIsOpen(!isOpen)}
 				>
-					({!isOpen} ? 열기 : 닫기)
+					{isOpen ? "닫기" : "열기"}
 				</button>
 			</div>
 
