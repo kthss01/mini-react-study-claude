@@ -1,4 +1,4 @@
-.notice-box {
+.modal-box {
 	width: 320px;
 	border: 1px solid #ccc;
 	border-radius: 12px;
@@ -7,21 +7,21 @@
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.notice-header {
+.modal-header {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: 16px;
 }
 
-.notice-title {
+.modal-title {
 	margin: 0;
 	font-size: 18px;
 	font-weight: 600;
 	color: #333;
 }
 
-.notice-toggle-btn {
+.modal-toggle-btn {
 	padding: 6px 12px;
 	border: 1px solid #bbb;
 	border-radius: 8px;
@@ -33,12 +33,12 @@
 	transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
-.notice-toggle-btn:hover {
+.modal-toggle-btn:hover {
 	background-color: #ececec;
 	border-color: #999;
 }
 
-.notice-content {
+.modal-content {
 	margin-bottom: 16px;
 	font-size: 15px;
 	line-height: 1.5;
